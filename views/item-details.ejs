@@ -15,13 +15,14 @@
                
 
         <script>
-            document.getElementById("deleteBtn").addEventListener("onclick", function(e) {
+
+            deleteBtn.onclick = function(e) {
                 e.preventDefault();
-                console.log(deleteBtn)
-                // const id = deletebBtn.dataset.id;
-                const id = e.target.gatAttribute('data-id')
+                // const id = deleteBtn.dataset.id
+                const id = e.target.getAttribute('data-id')
                 console.log(id)
-            })
+                const endpoint = '/items/${id}';
+            }
         </script>
     </body>
 </html>
