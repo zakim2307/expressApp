@@ -15,14 +15,13 @@
                
 
         <script>
-            deleteBtn.onclick = function (e) {
+            document.getElementById("deleteBtn").addEventListener("onclick", function(e) {
                 e.preventDefault();
                 console.log(deleteBtn)
-                const id = deletebBtn.dataset.id;
-                // const id = e.target.gatAttribute('data-id')
+                // const id = deletebBtn.dataset.id;
+                const id = e.target.gatAttribute('data-id')
                 console.log(id)
-
-            }
+            })
         </script>
     </body>
 </html>
