@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    </head>
+    <%- include('./partials/head.ejs') %>
     <body>
-        <nav>
-    <div class="nav-wrapper container">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="./add-item">Add</a></li>
-      </ul>
-    </div>
-  </nav>
         
-        <h1>Index Page</h1>
+        <%- include('./partials/nav.ejs') %>
         <div class="container">
-
+            <h1>Home Page</h1>
             <ul class="collection with-header">
-                <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-                <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-                <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-                <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-            </ul>
+                <% if(items.length > 0){ 
+                    items.forEach(item =>{ %>
+                        <li class="collection-item"><div><a href="/items/<%= item._id %>"><%= item.name %>      $<%= item.price %></a><a href="#!" class="secondary-content"><i class="material-icons">delete</i></a><a href="#!" class="secondary-content"><i class="material-icons">edit</i></a></div></li>
+
+                    <%  });  %>
+                <% }else{ %>
+                <li class="collection-item"><div>Nothing TO Display<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                <% } %>
+
+                </ul>
         </div>
                
 

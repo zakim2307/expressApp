@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./partials/head.ejs') %>
+    <body>
+        
+        <%- include('./partials/nav.ejs') %>
+        <div class="container">
+            <h1>Item Detailed Page</h1>
+            <div>
+                <h5>Name :  <%= items.name %></h5>
+                <h5>Price :  <%= items.price %></h5>
+            </div>
+            <a id="deleteBtn" data-id='<%= items._id %>' class="delete btn" href="">Delete</a>
+        </div>
+               
+
+        <script>
+            deleteBtn.onclick = function (e) {
+                e.preventDefault();
+                console.log(deleteBtn)
+                const id = deletebBtn.dataset.id;
+                // const id = e.target.gatAttribute('data-id')
+                console.log(id)
+
+            }
+        </script>
+    </body>
+</html>
