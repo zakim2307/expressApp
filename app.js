@@ -64,15 +64,15 @@ app.delete("/items/:id", (req, res) => {
 });
 
 app.put("/items/:id", (req, res) => {
-    const id = req.params.id;
-    Item.findByIdAndUpdate(id, req.body)
-      .then((result) => {
-        res.json({ msg: "Updated S" });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
+  const id = req.params.id;
+  Item.findByIdAndUpdate(id, req.body)
+    .then((result) => {
+      res.json({ msg: "Updated Succesfully" });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 app.use((req, res) => {
   res.render("error");
